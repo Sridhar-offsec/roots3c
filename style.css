@@ -1,0 +1,781 @@
+/* Base Theme */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #2a2b32;
+    color: #ececf1;
+    display: flex;
+}
+
+/* Top Navigation */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* ensures full width */
+    height: 60px;
+    background-color: #2a2b32;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #3f4045;
+    z-index: 1000;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 30px;
+    color: #10a37f;
+    margin-left: 20px;
+}
+
+.nav-links {
+    display: flex; /* make links stay in a row */
+    margin-left: auto; /* push to the right */
+}
+
+.nav-links a {
+    color: #ececf1;
+    text-decoration: none;
+    margin-left: 20px; /* more spacing */
+    font-size: 14px;
+    white-space: nowrap; /* prevent wrapping */
+}
+
+.nav-links a:hover {
+    color: #10a37f;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 60px; /* below navbar */
+    left: 0;
+    width: 200px;
+    height: calc(100% - 60px);
+    background-color: rgba(42, 43, 50, 0.7); /* transparent effect */
+    padding: 15px;
+    overflow-y: scroll; /* enable scrollbar */
+    border-right: none; /* remove vertical line */
+    scrollbar-width: thin; /* Firefox support */
+    scrollbar-color: rgba(236, 231, 231, 0.4) transparent; /* Firefox color */
+}
+
+/* Chrome, Edge, Safari */
+.sidebar::-webkit-scrollbar {
+    width: 8px; /* thin scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    border: 10px solid transparent; /* adds space around thumb */
+    background-clip: content-box; /* makes it "floating" */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+.content-links {
+    display: none;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.content-links a {
+    display: block;
+    color: #ececf1;
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+.content-links a:hover {
+    color: #10a37f;
+}
+
+.content-links.open {
+    display: flex;
+}
+
+/* Main Content */
+.content {
+    margin-left: 260px;
+    padding: 80px 40px 40px; /* space for navbar */
+    max-width: 900px;
+    line-height: 1.6;
+}
+
+/* Sidebar section styling */
+.menu-section {
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: #ececf1;
+    text-decoration: none;
+    margin: 4px 0;
+    font-size: 18px;
+}
+
+/* Hover effect - rectangle highlight */
+.sidebar a:hover {
+    background-color: rgba(16, 163, 127, 0.15); /* subtle green glow */
+    color: #10a37f;
+}
+
+/* Terminal Style Welcome */
+.terminal-welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding-left: 0; /* remove left space */
+}
+
+.terminal-window {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    width: 90%; /* make it bigger */
+    max-width: 1200px; /* larger terminal */
+    box-shadow: 0 0 25px rgba(16, 163, 127, 0.4);
+    font-family: "Courier New", monospace;
+}
+
+.terminal-body {
+    padding: 20px;
+    color: #10a37f;
+    font-size: 16px; /* slightly bigger text */
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 8px 8px 0 0;
+}
+
+.red-dot, .yellow-dot, .green-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.red-dot { background-color: #ff5f56; }
+.yellow-dot { background-color: #ffbd2e; }
+.green-dot { background-color: #27c93f; }
+
+.terminal-title {
+    margin-left: auto;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Remove left margin for special pages */
+.no-sidebar-margin {
+    margin-left: 0 !important;
+}
+
+/* Center & enlarge terminal */
+.terminal-welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+}
+
+.terminal-window {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    width: 95%;
+    max-width: 1300px;
+    box-shadow: 0 0 25px rgba(16, 163, 127, 0.4);
+    font-family: "Courier New", monospace;
+}
+
+/* Remove left margin for welcome page */
+body.welcome-page .content {
+    margin-left: 0 !important;
+}
+
+/* Center and enlarge the terminal */
+.terminal-welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+}
+
+.terminal-window {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    width: 95%;
+    max-width: 1300px;
+    box-shadow: 0 0 25px rgba(16, 163, 127, 0.4);
+    font-family: "Courier New", monospace;
+}
+/* Hide sidebar on welcome page */
+body.welcome-page .sidebar {
+    display: none;
+}
+
+/* Make content full width and center it on welcome page */
+body.welcome-page .content {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Terminal container full height */
+.terminal-welcome {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+}
+
+/* Larger terminal */
+.terminal-window {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1300px;
+    box-shadow: 0 0 25px rgba(16, 163, 127, 0.4);
+    font-family: "Courier New", monospace;
+}
+/* Welcome page layout fix */
+body.welcome-page .sidebar {
+    display: none; /* remove sidebar completely */
+}
+
+body.welcome-page .content {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+}
+
+/* Make terminal big and centered */
+body.welcome-page .terminal-welcome {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.welcome-page .terminal-window {
+    width: 90%;
+    max-width: 1300px;
+}
+/* Welcome page layout fix */
+body.welcome-page {
+    height: 100vh; /* take full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+body.welcome-page .sidebar {
+    display: none; /* remove sidebar completely */
+}
+
+body.welcome-page .content {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    flex: 1; /* fill available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make terminal big and centered */
+body.welcome-page .terminal-welcome {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.welcome-page .terminal-window {
+    width: 90%;
+    max-width: 1300px;
+}
+/* Center terminal header title */
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centers the title */
+    gap: 6px;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+
+/* Keep dots on the left while title is centered */
+.red-dot, .yellow-dot, .green-dot {
+    position: absolute;
+    left: 10px;
+}
+
+.terminal-title {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Center terminal content */
+.terminal-body {
+    padding: 15px;
+    color: #10a37f;
+    font-size: 16px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    text-align: center; /* centers the content text */
+}
+/* Terminal header with centered title */
+.terminal-header {
+    background-color: #2d2d2d;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+
+/* Dots group on the left */
+.terminal-dots {
+    position: absolute;
+    left: 10px;
+    display: flex;
+    gap: 6px;
+}
+
+.red-dot, .yellow-dot, .green-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red-dot { background-color: #ff5f56; }
+.yellow-dot { background-color: #ffbd2e; }
+.green-dot { background-color: #27c93f; }
+
+/* Title text */
+.terminal-title {
+    color: #ccc;
+    font-size: 14px;
+}
+/* Force center terminal title */
+.terminal-header {
+    display: flex;
+    justify-content: center; /* center everything horizontally */
+    align-items: center;
+    position: relative;
+}
+
+.terminal-title {
+    margin-left: 0 !important; /* remove old auto-push */
+    color: #ccc;
+    font-size: 14px;
+}
+
+.red-dot, .yellow-dot, .green-dot {
+    position: absolute;
+    left: 10px;
+}
+/* Adjust terminal content when sidebar is present */
+.terminal-welcome {
+    margin-left: 200px; /* same as sidebar width */
+    width: calc(100% - 200px);
+}
+.sidebar {
+    display: block !important;
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); /* faint track */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* For Firefox */
+.sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.05);
+}
+/* Sidebar section styling */
+.menu-section {
+    margin-bottom: 20px; /* space between menu sections */
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: #ececf1;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Hover effect - rectangle highlight */
+.sidebar a:hover {
+    background-color: rgba(16, 163, 127, 0.15); /* subtle green glow */
+    color: #10a37f;
+}
+
+/* Active link */
+.sidebar a.active {
+    background-color: rgba(16, 163, 127, 0.2);
+    color: #10a37f;
+    font-weight: bold;
+    border-radius: 4px;
+    padding-left: 8px;
+}
+/* Sidebar menu icons */
+.sidebar .menu-icon {
+    width: 18px;      /* small icon size */
+    height: 18px;
+    margin-right: 8px; /* space between icon and text */
+    vertical-align: middle;
+}
+
+/* Sidebar links - bigger size */
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: #ececf1;
+    text-decoration: none;
+    font-size: 16px; /* Increased from 14px */
+    padding: 10px 12px; /* More clickable area */
+    border-radius: 6px; /* Rounded corners for hover effect */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Sidebar menu icons - bigger */
+.sidebar .menu-icon {
+    width: 22px;   /* Increased from 18px */
+    height: 22px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Hover effect - rectangle highlight */
+.sidebar a:hover {
+    background-color: rgba(16, 163, 127, 0.15); /* subtle green glow */
+    color: #10a37f;
+}
+
+/* Active state - persistent highlight */
+.sidebar a.active {
+    background-color: rgba(16, 163, 127, 0.25);
+    color: #10a37f;
+    font-weight: bold;
+}
+/* WhoAmI Page */
+.whoami-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #10a37f;
+    object-fit: cover; /* ensures perfect fit */
+    object-position: top center; /* keeps face centered */
+}
+
+
+.whoami-title {
+    color: #10a37f;
+    font-family: "Courier New", monospace;
+    font-size: 28px;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.bio-text p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.highlight {
+    background-color: rgba(16, 163, 127, 0.2);
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.skills-section {
+    margin-top: 20px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(16, 163, 127, 0.2);
+    color: #10a37f;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin: 4px;
+    font-size: 13px;
+}
+/* ========= WhoAmI layout fixes (scoped to this page) ========= */
+:root {
+  --sidebar-w: 220px;
+  --topbar-h: 60px;
+  --accent: #10a37f;
+}
+
+body.whoami-page .topbar {
+  height: var(--topbar-h);
+  z-index: 1000;
+}
+
+/* Ensure sidebar and content widths match */
+body.whoami-page .sidebar {
+  width: var(--sidebar-w);
+  top: var(--topbar-h);
+  height: calc(100% - var(--topbar-h));
+  box-sizing: border-box;
+}
+
+body.whoami-page .content {
+    position: relative;
+    margin-left: var(--sidebar-w);
+    margin-top: var(--topbar-h); /* push entire content below topbar */
+    padding: 30px 40px 40px;
+    max-width: 1100px;
+    box-sizing: border-box;
+    z-index: 1; /* ensure it's above background layers */
+}
+
+
+
+/* Profile / Hero */
+body.whoami-page .whoami-section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body.whoami-page .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 0; /* no extra upward shift */
+}
+
+
+/* Avatar container with fallback & consistent border */
+body.whoami-page .profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1b1b1b;
+  flex-shrink: 0;
+}
+
+/* Image fits inside circle cleanly (prevents distortion or giant ring) */
+body.whoami-page .profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Title & meta */
+body.whoami-page .whoami-title {
+  font-family: "Courier New", monospace;
+  color: var(--accent);
+  font-size: 28px;
+  margin: 0 0 6px 0;
+}
+
+body.whoami-page .tagline {
+  margin: 0;
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+/* Bio text */
+body.whoami-page .bio-text p {
+  margin: 0 0 16px 0;
+  line-height: 1.65;
+  max-width: 1000px;
+  color: #e8e8ea;
+}
+
+/* Highlighted inline chips */
+body.whoami-page .highlight {
+  background-color: rgba(16,163,127,0.16);
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #cceee0;
+}
+
+/* Badges */
+body.whoami-page .skills-section {
+  margin-top: 18px;
+}
+
+body.whoami-page .badge {
+  display: inline-block;
+  background-color: rgba(16,163,127,0.18);
+  color: var(--accent);
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 6px 8px 6px 0;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+/* Smaller screens — hide sidebar and stack content */
+@media (max-width: 900px) {
+  body.whoami-page .sidebar { display: none; }
+  body.whoami-page .content { margin-left: 0; padding-top: calc(var(--topbar-h) + 12px); }
+  body.whoami-page .profile-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  body.whoami-page .profile-avatar { width: 96px; height: 96px; }
+}
+/* Fix for WhoAmI page profile image cut-off */
+body.whoami-page .content {
+    margin-left: var(--sidebar-w);
+    margin-top: var(--topbar-h); /* Push down to clear topbar */
+    padding: 30px 40px 40px;
+    max-width: 1100px;
+    box-sizing: border-box;
+}
+
+/* Ensure profile image is fully visible */
+body.whoami-page .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 20px; /* extra safety space */
+}
+
+body.whoami-page .profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--accent);
+    flex-shrink: 0;
+}
+
+body.whoami-page .profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.submenu {
+    display: none;
+    flex-direction: column;
+    margin-left: 32px; /* indent from Blog */
+}
+
+.submenu a {
+    font-size: 14px;
+    padding: 4px 0;
+    color: #ccc;
+}
+
+.submenu a:hover {
+    color: #10a37f;
+}
+
+.submenu.open {
+    display: flex;
+}
+.blog-card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(16, 163, 127, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+}
+
+.blog-card h2 {
+    color: #10a37f;
+    margin-top: 0;
+}
+
+.blog-card .meta {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    color: #10a37f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+.brand a {
+    color: #10a37f;
+    text-decoration: none;
+}
+
+.brand a:hover {
+    color: #0e8d6c;
+}

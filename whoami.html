@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Hicon.png">
+    <title>WhoAmI - RootS3c</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="whoami-page">
+    <!-- Top Navigation -->
+    <header class="topbar">
+        <div class="brand"><a href="index.html">RootS3c</a></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="https://x.com/Sridhar__07">X</a>
+            <a href="https://www.linkedin.com/in/sridhar-/">LinkedIn</a>
+            <a href="#">Work</a>
+            <a href="#">Research</a>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+    <div class="menu-section">
+        <a href="index.html"><img src="hello.png" class="menu-icon"> Welcome!</a>
+        <a href="whoami.html"><img src="Hicon.png" class="menu-icon"> WhoAmI</a>
+        <a href="#"><img src="Work.png" class="menu-icon"> Work Experience</a>
+        <a href="#"><img src="Achievments.png" class="menu-icon"> Achievements</a>
+
+        <!-- Blog Dropdown -->
+        <a href="#" class="menu-toggle"><img src="blog.png" class="menu-icon"> Blog ▼</a>
+        <div class="submenu">
+            <a href="blog-ctf.html">CTF</a>
+            <a href="blog-web.html">Web</a>
+            <a href="blog-pentesting.html">Pentesting</a>
+            <a href="blog-tools.html">Tools</a>
+        </div>
+
+        <a href="#"><img src="contact-us.png" class="menu-icon"> Contact</a>
+    </div>
+</aside>
+
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const currentLocation = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".sidebar a");
+
+    menuLinks.forEach(link => {
+        const linkHref = link.getAttribute("href");
+        if (linkHref === currentLocation) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+<script src="script.js"></script>
+
+
+
+    <!-- Main Content -->
+    <main class="content whoami-section">
+        <!-- Hero Section -->
+        <div class="profile-header">
+            <img src="logo1.png" alt="Sridhar Perumal" class="profile-pic">
+            <div>
+                <h1 class="whoami-title">$ whoami</h1>
+                <p class="tagline">Sr. IT Administrator | Cybersecurity Enthusiast | CTF Player </p>
+            </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="bio-text">
+            <p>Hi, I’m <strong>Sridhar Perumal</strong> — a passionate IT professional transitioning into the world of cybersecurity. With a strong background as a Senior IT Administrator managing ManageEngine Endpoint Central for Patch Management and asset management, I’m now focused on building my skills in <span class="highlight">Vulnerability Assessment</span> & <span class="highlight">Penetration Testing (VAPT)</span>.</p>
+            
+            <p>I cleared the <span class="highlight">CEH Practical</span> exam by EC-Council in 2022, which strengthened my hands-on ethical hacking capabilities. Though I have solid experience in IT administration, I’m fully committed to starting my career as a cybersecurity entry-level professional, specializing in pentesting and VAPT.</p>
+            
+            <p>I’m driven by continuous learning and practical skill-building to become a top-tier cybersecurity engineer. This website is where I share my journey, insights, and projects related to cybersecurity and IT.</p>
+        </div>
+
+        <!-- Skills / Badges -->
+        <div class="skills-section">
+            <span class="badge">🛡 CEH Practical</span>
+            <span class="badge">💻 VAPT</span>
+            <span class="badge">🔍 Pentesting</span>
+            <span class="badge">⚙ IT Administration</span>
+            <span class="badge">🖥 ManageEngine</span>
+        </div>
+    </main>
+</body>
+</html>

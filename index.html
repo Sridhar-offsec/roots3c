@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Hicon.png">
+    <title>Sridhar Perumal | Cyber Serucity Researcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    const terminalText = `
+Welcome to RootS3c - Cybersecurity Blog
+----------------------------------------
+👋 Hey there! I'm Sridhar Perumal.
+🔐 Cybersecurity Professional | Ethical Hacker
+
+Here you'll find:
+- CTF Writeups & Solutions
+- Penetration Testing Walkthroughs
+- Security Research & Tools
+- Tips for Aspiring Ethical Hackers
+
+> Stay curious. Stay secure. Hack the planet... responsibly!
+`;
+
+    let i = 0;
+    function typeWriter() {
+        if (i < terminalText.length) {
+            document.getElementById("terminal-text").textContent += terminalText.charAt(i);
+            i++;
+            setTimeout(typeWriter, 30);
+        }
+    }
+    window.onload = typeWriter;
+</script>
+
+<body class="welcome-page">
+    <!-- Top Navigation -->
+    <header class="topbar">
+        <div class="brand"><a href="index.html">RootS3c</a></div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="https://x.com/Sridhar__07">X</a>
+            <a href="https://www.linkedin.com/in/sridhar-/">LinkedIn</a>
+            <a href="#">Work</a>
+            <a href="#">Research</a>
+            
+        </nav>
+    </header>
+<!-- Sidebar -->
+   <aside class="sidebar">
+    <div class="menu-section">
+        <a href="index.html"><img src="hello.png" class="menu-icon"> Welcome!</a>
+        <a href="whoami.html"><img src="Hicon.png" class="menu-icon"> WhoAmI</a>
+        <a href="#"><img src="Work.png" class="menu-icon"> Work Experience</a>
+        <a href="#"><img src="Achievments.png" class="menu-icon"> Achievements</a>
+
+        <!-- Blog Dropdown -->
+        <a href="#" class="menu-toggle"><img src="blog.png" class="menu-icon"> Blog ▼</a>
+        <div class="submenu">
+            <a href="blog-ctf.html">CTF</a>
+            <a href="blog-web.html">Web</a>
+            <a href="blog-pentesting.html">Pentesting</a>
+            <a href="blog-tools.html">Tools</a>
+        </div>
+
+        <a href="#"><img src="contact-us.png" class="menu-icon"> Contact</a>
+    </div>
+</aside>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const currentLocation = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".sidebar a");
+
+    menuLinks.forEach(link => {
+        const linkHref = link.getAttribute("href");
+        if (linkHref === currentLocation) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+<script src="script.js"></script>
+
+
+
+<!-- Main Content -->
+<main class="content no-sidebar-margin">
+    <section class="terminal-welcome">
+        <div class="terminal-window">
+            <div class="terminal-header">
+    <div class="terminal-dots">
+        <span class="red-dot"></span>
+        <span class="yellow-dot"></span>
+        <span class="green-dot"></span>
+    </div>
+    <div class="terminal-title">Sridhar@roots3c:~</div>
+</div>
+            <div class="terminal-body">
+                <pre id="terminal-text"></pre>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
